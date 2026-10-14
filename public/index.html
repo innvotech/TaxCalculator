@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Duty Calculator (TRA)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="card">
+  <h1>Car Import Duty Calculator</h1>
+  <p class="sub">Enter the chassis initial and year of manufacture. Figures come live from the
+    <a href="https://taxpayerportal.tra.go.tz/#/umvvs/calculator" target="_blank" rel="noopener">TRA UMVVS calculator</a>.</p>
+
+  <form id="form" autocomplete="off">
+    <label>Chassis Initial
+      <input id="chassis" name="chassis" placeholder="e.g. ACU30" required maxlength="20">
+    </label>
+    <label>Year of Manufacture
+      <input id="year" name="year" type="number" placeholder="e.g. 2012" min="1950" max="2100" required>
+    </label>
+    <div id="choices"></div>
+    <div class="actions">
+      <button type="submit" id="go" class="primary">Get Vehicle Details</button>
+      <button type="button" id="clear" class="danger">Clear All</button>
+    </div>
+  </form>
+  <div id="msg" class="msg" hidden></div>
+</main>
+
+<div id="modal" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="close" id="close" aria-label="Close">&times;</button>
+    <h2 id="modal-title"></h2>
+    <section class="box" id="vehicle"></section>
+    <section class="box"><h3>Tax Breakdown</h3><div id="taxes"></div></section>
+    <section class="box totals"><h3>Total Taxes</h3><div id="totals"></div></section>
+    <p class="note" id="period"></p>
+    <div class="actions"><button class="primary" id="print">Print</button><button id="close2">Close</button></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

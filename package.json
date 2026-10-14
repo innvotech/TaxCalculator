@@ -1,0 +1,11 @@
+{
+  "name": "tra-duty-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Get Tanzania Revenue Authority used-car import duty from chassis initial and year",
+  "scripts": {
+    "dev": "vercel dev",
+    "local": "node dev-server.js"
+  },
+  "engines": { "node": ">=18" }
+}
